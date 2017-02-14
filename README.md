@@ -1,6 +1,8 @@
 Voodoo
 ------
 
+! WIP !
+
 A NewSQLy Database of sorts.
 
 Declarative DDL - the entire database structure is kept in a single file,
