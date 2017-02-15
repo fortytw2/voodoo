@@ -11,8 +11,3 @@ type ResultSet struct {
 	// an error, if any
 	Err error
 }
-
-// A Row is a single row in a ResultSet
-type Row struct {
-	Columns []interface{}
-}
