@@ -38,5 +38,32 @@ func testKVGetSet(t *testing.T, kv func() (KeyValue, error)) {
 }
 
 func testKVIter(t *testing.T, kv func() (KeyValue, error)) {
+	k, err := kv()
+	if err != nil {
+		t.Error("cannot open kv store:", err)
+	}
 
+	err = k.Set([]byte("/vader/son"), []byte("luke"))
+	if err != nil {
+		t.Error("cannot set key", err)
+	}
+	err = k.Set([]byte("/vader/daughter"), []byte("leia"))
+	if err != nil {
+		t.Error("cannot set key", err)
+	}
+
+	iter, err := k.Walk([]byte("/vader/"))
+	if err != nil {
+		t.Error("cannot get iterator", err)
+	}
+
+	iter.Next()
+	if string(iter.Val()) != "leia" {
+		t.Error("first value in iter not leia")
+	}
+
+	iter.Next()
+	if string(iter.Val()) != "luke" {
+		t.Error("second value in iter not luke")
+	}
 }

@@ -13,6 +13,7 @@ var (
 type KeyValue interface {
 	Get(key []byte) ([]byte, error)
 	Set(key []byte, val []byte) error
+
 	// Walk is used to traverse parts of the keyspace
 	Walk(prefix []byte) (Iterator, error)
 }
