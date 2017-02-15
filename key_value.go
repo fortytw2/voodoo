@@ -1,5 +1,11 @@
 package voodoo
 
+import "errors"
+
+var (
+	ErrNoKeyExists = errors.New("voodoo/keyvalue: no key exists")
+)
+
 // KeyValue is the primitive interface
 // on top of which SQL is mapped.
 //
