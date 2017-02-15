@@ -1,4 +1,4 @@
-Voodoo
+Voodoo [![Build Status](https://travis-ci.org/fortytw2/voodoo.svg?branch=master)](https://travis-ci.org/fortytw2/voodoo)
 ------
 
 ! WIP !
